@@ -37,13 +37,13 @@ body::before {
 }
 .logo { font-family: 'Bebas Neue'; font-size: 26px; color: #fff; letter-spacing: 3px; background: #FF6600; padding: 4px 16px; border-radius: 4px; }
 .wc-badge { font-family: 'Bebas Neue'; font-size: 13px; color: #FFD700; letter-spacing: 2px; text-align: right; line-height: 1.3; }
-.hero { text-align: center; padding: 28px 0 20px; }
-.trophy { font-size: 80px; display: block; margin: 0 auto 12px; animation: float 3s ease-in-out infinite; filter: drop-shadow(0 0 30px rgba(255,215,0,0.6)); }
+.hero { text-align: center; padding: 24px 0 16px; }
+.trophy { font-size: 70px; display: block; margin: 0 auto 8px; animation: float 3s ease-in-out infinite; filter: drop-shadow(0 0 30px rgba(255,215,0,0.6)); }
 @keyframes float { 0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-10px) rotate(5deg)} }
 .wc-title { font-family: 'Bebas Neue'; font-size: 20px; letter-spacing: 6px; color: #FFD700; margin-bottom: 6px; }
 .headline { font-family: 'Bebas Neue'; font-size: 52px; line-height: 0.95; color: #fff; letter-spacing: 2px; margin-bottom: 10px; }
 .headline span { color: #FF6600; }
-.sub { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; }
+.sub { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 16px; }
 .countdown { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,102,0,0.3); border-radius: 14px; padding: 16px; text-align: center; margin: 16px 0; }
 .countdown-label { font-size: 11px; letter-spacing: 3px; color: #FF6600; text-transform: uppercase; margin-bottom: 12px; }
 .countdown-boxes { display: flex; justify-content: center; gap: 10px; }
@@ -85,12 +85,16 @@ body::before {
     <div class="logo">1xBET</div>
     <div class="wc-badge" id="wc-badge">FIFA WORLD CUP<br>2026 🏆</div>
   </div>
+  
   <div class="hero">
     <span class="trophy">🏆</span>
     <div class="wc-title" id="wc-title">FIFA WORLD CUP 2026</div>
     <div class="headline" id="headline">BET BIG<br><span>WIN BIG</span></div>
     <div class="sub" id="hero-sub">The biggest tournament is here!<br>Get $200 bonus & bet on every match!</div>
+    
+    <a class="cta" id="cta-btn-top" href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank">⚽ CLAIM WORLD CUP BONUS</a>
   </div>
+  
   <div class="countdown">
     <div class="countdown-label" id="countdown-label">⚽ World Cup Kicks Off In</div>
     <div class="countdown-boxes">
@@ -100,11 +104,13 @@ body::before {
       <div class="count-box"><div class="count-num" id="secs">00</div><div class="count-label" id="lbl-secs">Secs</div></div>
     </div>
   </div>
+  
   <div class="promo-box">
     <div class="promo-label" id="promo-label">Your Exclusive Promo Code</div>
     <div class="promo-code">24HOUR</div>
     <div class="promo-sub" id="promo-sub">Use this code to unlock your <strong>full bonus</strong></div>
   </div>
+  
   <div class="bonus-card">
     <div class="bonus-amount" id="bonus-amount">$200 USD</div>
     <div class="bonus-desc" id="bonus-desc">Welcome Bonus on your first deposit 🎁</div>
@@ -134,7 +140,7 @@ body::before {
     <div class="step"><div class="step-num">4</div><div class="step-text" id="step4">Bet on <strong>every World Cup match</strong> & win big! ⚽</div></div>
   </div>
   
-  <a class="cta" id="cta-btn" href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank">⚽ CLAIM WORLD CUP BONUS</a>
+  <a class="cta" id="cta-btn-bottom" href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank">⚽ CLAIM WORLD CUP BONUS</a>
   
   <div class="trust" id="trust-badges">
     <div class="badge" id="badge1">⚡ Instant Withdrawal</div>
@@ -152,7 +158,6 @@ function setupLocalization() {
   const isBrazil = userLang.toLowerCase().includes('pt') || Intl.DateTimeFormat().resolvedOptions().timeZone.includes('Sao_Paulo');
 
   if (isBrazil) {
-    // Translate texts to Portuguese & update currency to localized estimate (or standard 200 USD equivalent in BRL if preferred)
     document.getElementById('wc-badge').innerHTML = "COPA DO MUNDO<br>2026 🏆";
     document.getElementById('wc-title').textContent = "COPA DO MUNDO DA FIFA 2026";
     document.getElementById('headline').innerHTML = "APOSTE ALTO<br><span>GANHE MUITO</span>";
@@ -181,7 +186,9 @@ function setupLocalization() {
     document.getElementById('step3').innerHTML = "Faça seu <strong>primeiro depósito</strong> e ganhe 100% de bônus";
     document.getElementById('step4').innerHTML = "Aposte em <strong>todos os jogos da Copa</strong> e ganhe muito! ⚽";
     
-    document.getElementById('cta-btn').textContent = "⚽ REIVINDICAR BÔNUS DA COPA";
+    // Updates both Top and Bottom buttons for Brazil
+    document.getElementById('cta-btn-top').textContent = "⚽ REIVINDICAR BÔNUS DA COPA";
+    document.getElementById('cta-btn-bottom').textContent = "⚽ REIVINDICAR BÔNUS DA COPA";
     
     document.getElementById('badge1').textContent = "⚡ Saque Instantâneo";
     document.getElementById('badge2').textContent = "🔒 100% Seguro";
@@ -207,7 +214,6 @@ function updateCountdown() {
   document.getElementById('secs').textContent = String(secs).padStart(2,'0');
 }
 
-// Run setup functions
 setupLocalization();
 updateCountdown();
 setInterval(updateCountdown, 1000);
