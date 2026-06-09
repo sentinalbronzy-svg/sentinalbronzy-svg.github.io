@@ -43,7 +43,7 @@ body::before {
 .wc-title { font-family: 'Bebas Neue'; font-size: 20px; letter-spacing: 6px; color: #FFD700; margin-bottom: 6px; }
 .headline { font-family: 'Bebas Neue'; font-size: 52px; line-height: 0.95; color: #fff; letter-spacing: 2px; margin-bottom: 10px; }
 .headline span { color: #FF6600; }
-.sub { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 16px; }
+.sub { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; }
 .countdown { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,102,0,0.3); border-radius: 14px; padding: 16px; text-align: center; margin: 16px 0; }
 .countdown-label { font-size: 11px; letter-spacing: 3px; color: #FF6600; text-transform: uppercase; margin-bottom: 12px; }
 .countdown-boxes { display: flex; justify-content: center; gap: 10px; }
@@ -54,7 +54,7 @@ body::before {
 .promo-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent 340deg, rgba(255,102,0,0.08) 360deg); animation: spin 8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .promo-label { font-size: 11px; letter-spacing: 3px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 10px; position: relative; }
-.promo-code { font-family: 'Bebas Neue'; font-size: 58px; color: #FF6600; letter-spacing: 10px; text-shadow: 0 0 40px rgba(255,102,0,0.8); margin-bottom: 8px; position: relative; }
+.promo-code { font-family: 'Bebas Neue'; font-size: 58px; color: #FF6600; letter-spacing: 6px; text-shadow: 0 0 40px rgba(255,102,0,0.8); margin-bottom: 8px; position: relative; }
 .promo-sub { font-size: 13px; color: rgba(255,255,255,0.6); position: relative; }
 .promo-sub strong { color: #fff; }
 .bonus-card { background: linear-gradient(135deg, #FF6600, #FF8C00); border-radius: 16px; padding: 20px; text-align: center; margin: 16px 0; box-shadow: 0 8px 32px rgba(255,102,0,0.4); }
@@ -83,72 +83,115 @@ body::before {
 <div class="wrap">
   <div class="header">
     <div class="logo">1xBET</div>
-    <div class="wc-badge">FIFA WORLD CUP<br>2026 🏆</div>
+    <div class="wc-badge" id="wc-badge">FIFA WORLD CUP<br>2026 🏆</div>
   </div>
-  
   <div class="hero">
     <span class="trophy">🏆</span>
-    <div class="wc-title">FIFA WORLD CUP 2026</div>
-    <div class="headline">BET BIG<br><span>WIN BIG</span></div>
-    <div class="sub">The biggest tournament is here!<br>Get $200 bonus & bet on every match!</div>
-    
-    <a class="cta" href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank">⚽ CLAIM WORLD CUP BONUS</a>
+    <div class="wc-title" id="wc-title">FIFA WORLD CUP 2026</div>
+    <div class="headline" id="headline">BET BIG<br><span>WIN BIG</span></div>
+    <div class="sub" id="hero-sub">The biggest tournament is here!<br>Get $200 bonus & bet on every match!</div>
   </div>
-
   <div class="countdown">
-    <div class="countdown-label">⚽ World Cup Kicks Off In</div>
+    <div class="countdown-label" id="countdown-label">⚽ World Cup Kicks Off In</div>
     <div class="countdown-boxes">
-      <div class="count-box"><div class="count-num" id="days">04</div><div class="count-label">Days</div></div>
-      <div class="count-box"><div class="count-num" id="hours">00</div><div class="count-label">Hours</div></div>
-      <div class="count-box"><div class="count-num" id="mins">00</div><div class="count-label">Mins</div></div>
-      <div class="count-box"><div class="count-num" id="secs">00</div><div class="count-label">Secs</div></div>
+      <div class="count-box"><div class="count-num" id="days">04</div><div class="count-label" id="lbl-days">Days</div></div>
+      <div class="count-box"><div class="count-num" id="hours">00</div><div class="count-label" id="lbl-hours">Hours</div></div>
+      <div class="count-box"><div class="count-num" id="mins">00</div><div class="count-label" id="lbl-mins">Mins</div></div>
+      <div class="count-box"><div class="count-num" id="secs">00</div><div class="count-label" id="lbl-secs">Secs</div></div>
     </div>
   </div>
-
   <div class="promo-box">
-    <div class="promo-label">Your Exclusive Promo Code</div>
+    <div class="promo-label" id="promo-label">Your Exclusive Promo Code</div>
     <div class="promo-code">24HOUR</div>
-    <div class="promo-sub">Use this code to unlock your <strong>full bonus</strong></div>
+    <div class="promo-sub" id="promo-sub">Use this code to unlock your <strong>full bonus</strong></div>
   </div>
-
   <div class="bonus-card">
-    <div class="bonus-amount">$200</div>
-    <div class="bonus-desc">Welcome Bonus on your first deposit 🎁</div>
+    <div class="bonus-amount" id="bonus-amount">$200 USD</div>
+    <div class="bonus-desc" id="bonus-desc">Welcome Bonus on your first deposit 🎁</div>
   </div>
-
-  <div class="matches-title">⚽ WORLD CUP PREDICTIONS</div>
+  
+  <div class="matches-title" id="matches-title">⚽ WORLD CUP PREDICTIONS</div>
   <div class="match-card">
     <div class="match-teams">🇺🇸 USA <span class="vs">VS</span> 🇲🇽 MEX</div>
-    <div><div class="odds-num">2.10</div><div class="odds-tip">USA TO WIN</div></div>
+    <div><div class="odds-num">2.10</div><div class="odds-tip" id="tip1">USA TO WIN</div></div>
   </div>
   <div class="match-card">
     <div class="match-teams">🇧🇷 BRA <span class="vs">VS</span> 🇦🇷 ARG</div>
-    <div><div class="odds-num">1.95</div><div class="odds-tip">BOTH SCORE</div></div>
+    <div><div class="odds-num">1.95</div><div class="odds-tip" id="tip2">BOTH SCORE</div></div>
   </div>
   <div class="match-card">
-    <div class="match-teams">🏴󠁧󠁢󠁥󠁮弈󠁿 ENG <span class="vs">VS</span> 🇫🇷 FRA</div>
-    <div><div class="odds-num">2.40</div><div class="odds-tip">ENG TO WIN</div></div>
+    <div class="match-teams">🏴󠁧󠁢󠁥󠁮󠁧󠁿 ENG <span class="vs">VS</span> 🇫🇷 FRA</div>
+    <div><div class="odds-num">2.40</div><div class="odds-tip" id="tip3">ENG TO WIN</div></div>
   </div>
-
-  <div class="flags">🇧🇩🇮🇳🇧🇷🇦🇷🇫🇷🇩🇪🇵🇹🇪🇸</div>
-
-  <div class="steps-title">HOW TO CLAIM</div>
-  <div class="step"><div class="step-num">1</div><div class="step-text">Click button above and <strong>register free</strong> on 1xBet</div></div>
-  <div class="step"><div class="step-num">2</div><div class="step-text">Enter promo code <strong>24HOUR</strong> during registration</div></div>
-  <div class="step"><div class="step-num">3</div><div class="step-text">Make your <strong>first deposit</strong> and get 100% bonus instantly</div></div>
-  <div class="step"><div class="step-num">4</div><div class="step-text">Bet on <strong>every World Cup match</strong> & win big! ⚽</div></div>
-
-  <div class="trust">
-    <div class="badge">⚡ Instant Withdrawal</div>
-    <div class="badge">🔒 100% Secure</div>
-    <div class="badge">📱 bKash & Nagad</div>
-    <div class="badge">✅ Trusted Platform</div>
-    <div class="badge">🏆 World Cup Specials</div>
+  
+  <div class="flags">🇧🇷🇦🇷🇺🇸🇲🇽🇫🇷🇩🇪🇵🇹🇪🇸</div>
+  
+  <div class="steps-title" id="steps-title">HOW TO CLAIM</div>
+  <div id="steps-container">
+    <div class="step"><div class="step-num">1</div><div class="step-text" id="step1">Click button below and <strong>register free</strong> on 1xBet</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text" id="step2">Enter promo code <strong>24HOUR</strong> during registration</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text" id="step3">Make your <strong>first deposit</strong> and get 100% bonus instantly</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text" id="step4">Bet on <strong>every World Cup match</strong> & win big! ⚽</div></div>
   </div>
-  <div class="disclaimer">18+ only. Gambling can be addictive. Please bet responsibly. T&C apply.</div>
+  
+  <a class="cta" id="cta-btn" href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank">⚽ CLAIM WORLD CUP BONUS</a>
+  
+  <div class="trust" id="trust-badges">
+    <div class="badge" id="badge1">⚡ Instant Withdrawal</div>
+    <div class="badge" id="badge2">🔒 100% Secure</div>
+    <div class="badge" id="badge3">💳 Credit Card & Crypto</div>
+    <div class="badge" id="badge4">✅ Trusted Platform</div>
+  </div>
+  <div class="disclaimer" id="disclaimer">18+ only. Gambling can be addictive. Please bet responsibly. T&C apply.</div>
 </div>
 
 <script>
+// Auto-detect Brazil Language and Switch Content Dynamically
+function setupLocalization() {
+  const userLang = navigator.language || navigator.userLanguage;
+  const isBrazil = userLang.toLowerCase().includes('pt') || Intl.DateTimeFormat().resolvedOptions().timeZone.includes('Sao_Paulo');
+
+  if (isBrazil) {
+    // Translate texts to Portuguese & update currency to localized estimate (or standard 200 USD equivalent in BRL if preferred)
+    document.getElementById('wc-badge').innerHTML = "COPA DO MUNDO<br>2026 🏆";
+    document.getElementById('wc-title').textContent = "COPA DO MUNDO DA FIFA 2026";
+    document.getElementById('headline').innerHTML = "APOSTE ALTO<br><span>GANHE MUITO</span>";
+    document.getElementById('hero-sub').innerHTML = "O maior torneio chegou!<br>Ganhe bônus de R$1200 e aposte em todos os jogos!";
+    document.getElementById('countdown-label').textContent = "⚽ A Copa do Mundo Começa Em";
+    
+    document.getElementById('lbl-days').textContent = "Dias";
+    document.getElementById('lbl-hours').textContent = "Horas";
+    document.getElementById('lbl-mins').textContent = "Minutos";
+    document.getElementById('lbl-secs').textContent = "Segundos";
+    
+    document.getElementById('promo-label').textContent = "Seu Código Promocional Exclusivo";
+    document.getElementById('promo-sub').innerHTML = "Use este código para liberar seu <strong>bônus total</strong>";
+    
+    document.getElementById('bonus-amount').textContent = "R$ 1.200 BRL";
+    document.getElementById('bonus-desc').textContent = "Bônus de Boas-Vindas no seu primeiro depósito 🎁";
+    
+    document.getElementById('matches-title').textContent = "⚽ PREVISÕES DA COPA DO MUNDO";
+    document.getElementById('tip1').textContent = "USA PARA GANHAR";
+    document.getElementById('tip2').textContent = "AMBOS MARCAM";
+    document.getElementById('tip3').textContent = "ENG PARA GANHAR";
+    
+    document.getElementById('steps-title').textContent = "COMO REIVINDICAR";
+    document.getElementById('step1').innerHTML = "Clique no botão abaixo e <strong>registre-se grátis</strong> na 1xBet";
+    document.getElementById('step2').innerHTML = "Insira o código promocional <strong>24HOUR</strong> no registro";
+    document.getElementById('step3').innerHTML = "Faça seu <strong>primeiro depósito</strong> e ganhe 100% de bônus";
+    document.getElementById('step4').innerHTML = "Aposte em <strong>todos os jogos da Copa</strong> e ganhe muito! ⚽";
+    
+    document.getElementById('cta-btn').textContent = "⚽ REIVINDICAR BÔNUS DA COPA";
+    
+    document.getElementById('badge1').textContent = "⚡ Saque Instantâneo";
+    document.getElementById('badge2').textContent = "🔒 100% Seguro";
+    document.getElementById('badge3').textContent = "📱 PIX Disponível";
+    document.getElementById('badge4').textContent = "✅ Plataforma Confiável";
+    
+    document.getElementById('disclaimer').textContent = "Apenas para maiores de 18 anos. Jogar pode ser viciante. Por favor, jogue com responsabilidade. Termos e Condições se aplicam.";
+  }
+}
+
 function updateCountdown() {
   const target = new Date('2026-06-11T18:00:00Z');
   const now = new Date();
@@ -163,6 +206,9 @@ function updateCountdown() {
   document.getElementById('mins').textContent = String(mins).padStart(2,'0');
   document.getElementById('secs').textContent = String(secs).padStart(2,'0');
 }
+
+// Run setup functions
+setupLocalization();
 updateCountdown();
 setInterval(updateCountdown, 1000);
 </script>
