@@ -3,220 +3,338 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1xBet – FIFA World Cup 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+<title>1xBet – FIFA World Cup 2026 LIVE</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  background: #003087;
+  background: #020b24;
   color: #fff;
   font-family: 'Rajdhani', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
 }
+/* Premium ambient stadium lighting background */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(0,80,200,0.4) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(255,165,0,0.15) 0%, transparent 50%),
-    linear-gradient(180deg, #001a5c 0%, #003087 50%, #001a5c 100%);
+    radial-gradient(circle at 50% -20%, rgba(0, 102, 255, 0.5) 0%, transparent 50%),
+    radial-gradient(circle at 10% 40%, rgba(255, 102, 0, 0.15) 0%, transparent 40%),
+    linear-gradient(180deg, #020b24 0%, #05163d 100%);
   pointer-events: none;
   z-index: 0;
 }
 .wrap { max-width: 480px; margin: 0 auto; padding: 0 16px 48px; position: relative; z-index: 1; }
+
+/* Clean Minimal Header */
 .header {
-  background: #001a5c;
-  margin: 0 -16px;
-  padding: 14px 20px;
+  padding: 20px 4px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 3px solid #FF6600;
 }
-.logo { font-family: 'Bebas Neue'; font-size: 26px; color: #fff; letter-spacing: 3px; background: #FF6600; padding: 4px 16px; border-radius: 4px; }
-.wc-badge { font-family: 'Bebas Neue'; font-size: 13px; color: #FFD700; letter-spacing: 2px; text-align: right; line-height: 1.3; }
-.hero { text-align: center; padding: 24px 0 16px; }
-.trophy { font-size: 70px; display: block; margin: 0 auto 8px; animation: float 3s ease-in-out infinite; filter: drop-shadow(0 0 30px rgba(255,215,0,0.6)); }
-@keyframes float { 0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-10px) rotate(5deg)} }
-.wc-title { font-family: 'Bebas Neue'; font-size: 20px; letter-spacing: 6px; color: #FFD700; margin-bottom: 6px; }
-.headline { font-family: 'Bebas Neue'; font-size: 52px; line-height: 0.95; color: #fff; letter-spacing: 2px; margin-bottom: 10px; }
-.headline span { color: #FF6600; }
-.sub { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 16px; }
-.countdown { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,102,0,0.3); border-radius: 14px; padding: 16px; text-align: center; margin: 16px 0; }
-.countdown-label { font-size: 11px; letter-spacing: 3px; color: #FF6600; text-transform: uppercase; margin-bottom: 12px; }
-.countdown-boxes { display: flex; justify-content: center; gap: 10px; }
-.count-box { background: rgba(0,0,50,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 10px 16px; min-width: 64px; }
-.count-num { font-family: 'Bebas Neue'; font-size: 36px; color: #FFD700; line-height: 1; text-shadow: 0 0 20px rgba(255,215,0,0.5); }
-.count-label { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; }
-.promo-box { background: linear-gradient(135deg, #001a5c, #002470); border: 2px solid #FF6600; border-radius: 18px; padding: 24px; text-align: center; margin: 16px 0; position: relative; overflow: hidden; box-shadow: 0 0 40px rgba(255,102,0,0.2); }
-.promo-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent 340deg, rgba(255,102,0,0.08) 360deg); animation: spin 8s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-.promo-label { font-size: 11px; letter-spacing: 3px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 10px; position: relative; }
-.promo-code { font-family: 'Bebas Neue'; font-size: 58px; color: #FF6600; letter-spacing: 6px; text-shadow: 0 0 40px rgba(255,102,0,0.8); margin-bottom: 8px; position: relative; }
-.promo-sub { font-size: 13px; color: rgba(255,255,255,0.6); position: relative; }
-.promo-sub strong { color: #fff; }
-.bonus-card { background: linear-gradient(135deg, #FF6600, #FF8C00); border-radius: 16px; padding: 20px; text-align: center; margin: 16px 0; box-shadow: 0 8px 32px rgba(255,102,0,0.4); }
-.bonus-amount { font-family: 'Bebas Neue'; font-size: 60px; color: #fff; line-height: 1; }
-.bonus-desc { font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 6px; }
-.matches-title { font-family: 'Bebas Neue'; font-size: 20px; letter-spacing: 3px; color: rgba(255,255,255,0.5); text-align: center; margin: 20px 0 12px; }
-.match-card { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; }
-.match-teams { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; color: #fff; }
-.vs { font-family: 'Bebas Neue'; font-size: 14px; color: #FF6600; }
-.odds-num { font-family: 'Bebas Neue'; font-size: 24px; color: #FFD700; line-height: 1; text-align: right; }
-.odds-tip { font-size: 11px; color: #4CAF50; text-align: right; }
-.steps-title { font-family: 'Bebas Neue'; font-size: 20px; letter-spacing: 3px; color: rgba(255,255,255,0.5); text-align: center; margin: 20px 0 14px; }
-.step { display: flex; align-items: flex-start; gap: 14px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; margin-bottom: 10px; }
-.step-num { background: #FF6600; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue'; font-size: 18px; flex-shrink: 0; margin-top: 2px; }
-.step-text { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.85); }
-.step-text strong { color: #FF6600; }
-.cta { display: block; width: 100%; background: linear-gradient(135deg, #FF6600, #FF8C00); color: #fff; text-align: center; padding: 20px; border-radius: 14px; font-family: 'Bebas Neue'; font-size: 26px; letter-spacing: 3px; text-decoration: none; margin: 16px 0; animation: pulse 2.5s ease-in-out infinite; }
-@keyframes pulse { 0%,100%{box-shadow:0 8px 32px rgba(255,102,0,0.5)} 50%{box-shadow:0 8px 52px rgba(255,102,0,0.9)} }
-.flags { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 16px 0; font-size: 28px; }
-.trust { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 12px 0; }
-.badge { font-size: 12px; color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 6px 14px; }
-.disclaimer { font-size: 11px; color: rgba(255,255,255,0.2); text-align: center; line-height: 1.7; margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+.logo { font-family: 'Bebas Neue'; font-size: 28px; color: #fff; letter-spacing: 2px; }
+.logo span { color: #FF6600; }
+.wc-badge { font-family: 'Bebas Neue'; font-size: 14px; color: #FFD700; letter-spacing: 1px; text-align: right; line-height: 1.2; }
+
+/* Dynamic Live Hero Section */
+.hero { text-align: center; padding: 20px 0 10px; }
+.live-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid #ff3333;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ff4d4d;
+  margin-bottom: 16px;
+}
+.live-pulse::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #ff3333;
+  border-radius: 50%;
+  animation: pulse-dot 1.5s infinite;
+}
+@keyframes pulse-dot { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+.headline { font-family: 'Bebas Neue'; font-size: 56px; line-height: 0.9; color: #fff; letter-spacing: 1px; margin-bottom: 12px; }
+.headline span { color: #FF6600; text-shadow: 0 0 30px rgba(255,102,0,0.6); }
+.sub { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.5; margin-bottom: 4px; }
+
+/* Modern High-Converting Offer Card */
+.offer-container {
+  background: linear-gradient(135deg, rgba(255,102,0,0.15) 0%, rgba(255,140,0,0.05) 100%);
+  border: 1px solid rgba(255,102,0,0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  margin: 12px 0 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.bonus-amount { font-family: 'Bebas Neue'; font-size: 64px; color: #FFD700; line-height: 1; text-shadow: 0 0 20px rgba(255,215,0,0.3); }
+.bonus-desc { font-size: 14px; color: #fff; font-weight: 600; margin-top: 4px; letter-spacing: 0.5px;}
+
+/* Click to Copy Promo Box */
+.promo-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px dashed rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.promo-box:hover { background: rgba(255,255,255,0.08); border-color: #FF6600; }
+.promo-label { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 4px; }
+.promo-code { font-family: 'Bebas Neue'; font-size: 32px; color: #FF6600; letter-spacing: 4px; }
+.copy-alert { font-size: 11px; color: #4CAF50; margin-top: 2px; display: none; font-weight: 600; }
+
+/* Interactive Live Matches Section */
+.section-title { font-family: 'Bebas Neue'; font-size: 22px; letter-spacing: 2px; color: #FFD700; margin: 24px 0 14px; display: flex; align-items: center; gap: 8px; }
+.match-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px; margin-bottom: 12px; }
+.match-header { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 10px; font-weight: 600; letter-spacing: 0.5px; }
+.match-live-tag { color: #ff4d4d; display: flex; align-items: center; gap: 4px; }
+.match-live-tag::before { content: ''; width: 6px; height: 6px; background: #ff4d4d; border-radius: 50%; }
+.match-teams { display: flex; flex-direction: column; gap: 6px; font-size: 16px; font-weight: 700; margin-bottom: 14px; }
+.team { display: flex; align-items: center; gap: 8px; }
+
+/* Dynamic Betting Odds Buttons */
+.odds-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.odds-btn {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.odds-btn:hover { border-color: #FF6600; background: rgba(255,102,0,0.1); }
+.odds-label { font-size: 10px; color: rgba(255,255,255,0.4); display: block; margin-bottom: 2px; }
+.odds-val { font-family: 'Bebas Neue'; font-size: 18px; color: #FFD700; }
+
+/* Modern Step Flow */
+.step { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 14px 16px; margin-bottom: 8px; }
+.step-num { color: #FF6600; font-family: 'Bebas Neue'; font-size: 24px; font-weight: bold; width: 24px; flex-shrink: 0; }
+.step-text { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.4; }
+.step-text strong { color: #fff; font-weight: 700; }
+
+/* Action Pulse Buttons */
+.cta { display: block; width: 100%; background: linear-gradient(90deg, #FF6600 0%, #FF8C00 100%); color: #fff; text-align: center; padding: 18px; border-radius: 14px; font-family: 'Bebas Neue'; font-size: 24px; letter-spacing: 2px; text-decoration: none; box-shadow: 0 6px 20px rgba(255,102,0,0.4); transition: transform 0.2s; }
+.cta.top-cta { margin: 16px 0 4px; }
+.cta.bottom-cta { margin: 24px 0 16px; }
+.cta:active { transform: scale(0.98); }
+
+/* Badges & Trust */
+.trust { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 16px 0; }
+.badge { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 50px; padding: 6px 12px; }
+.disclaimer { font-size: 11px; color: rgba(255,255,255,0.25); text-align: center; line-height: 1.6; margin-top: 32px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.05); }
 </style>
 </head>
 <body>
 <div class="wrap">
+  
+  <!-- Header -->
   <div class="header">
-    <div class="logo">1xBET</div>
-    <div class="wc-badge" id="wc-badge">FIFA WORLD CUP<br>2026 🏆</div>
+    <div class="logo">1x<span>BET</span></div>
+    <div class="wc-badge" id="wc-badge">FIFA WORLD CUP<br>LIVE 🏆</div>
   </div>
   
+  <!-- Hero Headings -->
   <div class="hero">
-    <span class="trophy">🏆</span>
-    <div class="wc-title" id="wc-title">FIFA WORLD CUP 2026</div>
-    <div class="headline" id="headline">BET BIG<br><span>WIN BIG</span></div>
-    <div class="sub" id="hero-sub">The biggest tournament is here!<br>Get $200 bonus & bet on every match!</div>
+    <div class="live-pulse" id="live-text">World Cup Action is Live</div>
+    <div class="headline" id="headline">BET LIVE ON<br><span>THE WORLD CUP</span></div>
+    <div class="sub" id="hero-sub">Instant odds on every single global match.</div>
     
-    <a class="cta" id="cta-btn-top" href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank">⚽ CLAIM WORLD CUP BONUS</a>
+    <!-- Above-The-Fold Urgent Button -->
+    <a class="cta top-cta" id="cta-btn-top" href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank">⚽ BET LIVE ON WORLD CUP NOW</a>
   </div>
   
-  <div class="countdown">
-    <div class="countdown-label" id="countdown-label">⚽ World Cup Kicks Off In</div>
-    <div class="countdown-boxes">
-      <div class="count-box"><div class="count-num" id="days">04</div><div class="count-label" id="lbl-days">Days</div></div>
-      <div class="count-box"><div class="count-num" id="hours">00</div><div class="count-label" id="lbl-hours">Hours</div></div>
-      <div class="count-box"><div class="count-num" id="mins">00</div><div class="count-label" id="lbl-mins">Mins</div></div>
-      <div class="count-box"><div class="count-num" id="secs">00</div><div class="count-label" id="lbl-secs">Secs</div></div>
+  <!-- Unified High Conversion Offer Box -->
+  <div class="offer-container">
+    <div class="bonus-amount" id="bonus-amount">$200 USD</div>
+    <div class="bonus-desc" id="bonus-desc">100% Welcome Bonus On Your First Deposit 🎁</div>
+    
+    <!-- Interactive Copy-to-Clipboard Feature -->
+    <div class="promo-box" onclick="copyPromoCode()">
+      <div class="promo-label" id="promo-label">Tap to copy exclusive promo code</div>
+      <div class="promo-code">24HOUR</div>
+      <div class="copy-alert" id="copy-alert">✔ COPIED TO CLIPBOARD!</div>
     </div>
   </div>
+
+  <!-- Real-Time Match Odds Section -->
+  <div class="section-title" id="matches-title">🔥 POPULAR LIVE MATCHES</div>
   
-  <div class="promo-box">
-    <div class="promo-label" id="promo-label">Your Exclusive Promo Code</div>
-    <div class="promo-code">24HOUR</div>
-    <div class="promo-sub" id="promo-sub">Use this code to unlock your <strong>full bonus</strong></div>
-  </div>
-  
-  <div class="bonus-card">
-    <div class="bonus-amount" id="bonus-amount">$200 USD</div>
-    <div class="bonus-desc" id="bonus-desc">Welcome Bonus on your first deposit 🎁</div>
-  </div>
-  
-  <div class="matches-title" id="matches-title">⚽ WORLD CUP PREDICTIONS</div>
+  <!-- Match 1 -->
   <div class="match-card">
-    <div class="match-teams">🇺🇸 USA <span class="vs">VS</span> 🇲🇽 MEX</div>
-    <div><div class="odds-num">2.10</div><div class="odds-tip" id="tip1">USA TO WIN</div></div>
+    <div class="match-header">
+      <span id="m-status1">GROUP STAGE</span>
+      <span class="match-live-tag" id="live-lbl1">LIVE</span>
+    </div>
+    <div class="match-teams">
+      <div class="team">🇺🇸 USA</div>
+      <div class="team">🇲🇽 MEX</div>
+    </div>
+    <div class="odds-row">
+      <a href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank" class="odds-btn"><span class="odds-label">1</span><span class="odds-val">2.10</span></a>
+      <a href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank" class="odds-btn"><span class="odds-label">X</span><span class="odds-val">3.40</span></a>
+      <a href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank" class="odds-btn"><span class="odds-label">2</span><span class="odds-val">3.20</span></a>
+    </div>
   </div>
+
+  <!-- Match 2 -->
   <div class="match-card">
-    <div class="match-teams">🇧🇷 BRA <span class="vs">VS</span> 🇦🇷 ARG</div>
-    <div><div class="odds-num">1.95</div><div class="odds-tip" id="tip2">BOTH SCORE</div></div>
+    <div class="match-header">
+      <span id="m-status2">GROUP STAGE</span>
+      <span class="match-live-tag" id="live-lbl2">LIVE</span>
+    </div>
+    <div class="match-teams">
+      <div class="team">🇧🇷 BRA</div>
+      <div class="team">🇦🇷 ARG</div>
+    </div>
+    <div class="odds-row">
+      <a href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank" class="odds-btn"><span class="odds-label">1</span><span class="odds-val">1.95</span></a>
+      <a href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank" class="odds-btn"><span class="odds-label">X</span><span class="odds-val">3.60</span></a>
+      <a href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank" class="odds-btn"><span class="odds-label">2</span><span class="odds-val">2.80</span></a>
+    </div>
   </div>
-  <div class="match-card">
-    <div class="match-teams">🏴󠁧󠁢󠁥󠁮󠁧󠁿 ENG <span class="vs">VS</span> 🇫🇷 FRA</div>
-    <div><div class="odds-num">2.40</div><div class="odds-tip" id="tip3">ENG TO WIN</div></div>
-  </div>
-  
-  <div class="flags">🇧🇷🇦🇷🇺🇸🇲🇽🇫🇷🇩🇪🇵🇹🇪🇸</div>
-  
-  <div class="steps-title" id="steps-title">HOW TO CLAIM</div>
+
+  <!-- Dynamic How to Claim Instructions -->
+  <div class="section-title" id="steps-title">⚡ QUICK START GUIDELINES</div>
   <div id="steps-container">
-    <div class="step"><div class="step-num">1</div><div class="step-text" id="step1">Click button below and <strong>register free</strong> on 1xBet</div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-text" id="step2">Enter promo code <strong>24HOUR</strong> during registration</div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-text" id="step3">Make your <strong>first deposit</strong> and get 100% bonus instantly</div></div>
-    <div class="step"><div class="step-num">4</div><div class="step-text" id="step4">Bet on <strong>every World Cup match</strong> & win big! ⚽</div></div>
+    <div class="step"><div class="step-num">1</div><div class="step-text" id="step1">Tap below to **register a free profile** on 1xBet</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text" id="step2">Use exclusive code **24HOUR** while signing up</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text" id="step3">Complete your **first fast deposit** to double your bankroll</div></div>
   </div>
-  
-  <a class="cta" id="cta-btn-bottom" href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank">⚽ CLAIM WORLD CUP BONUS</a>
-  
+
+  <!-- Strong Final Call To Action -->
+  <a class="cta bottom-cta" id="cta-btn-bottom" href="https://reffpa.com/L?tag=d_3416856m_1573c_&site=3416856&ad=1573" target="_blank">⚽ BET LIVE ON WORLD CUP NOW</a>
+
+  <!-- Trust Verification Badges -->
   <div class="trust" id="trust-badges">
-    <div class="badge" id="badge1">⚡ Instant Withdrawal</div>
-    <div class="badge" id="badge2">🔒 100% Secure</div>
-    <div class="badge" id="badge3">💳 Credit Card & Crypto</div>
-    <div class="badge" id="badge4">✅ Trusted Platform</div>
+    <div class="badge" id="badge1">⚡ Instant Cashouts</div>
+    <div class="badge" id="badge2">🔒 100% Encrypted Security</div>
+    <div class="badge" id="badge3">💳 Cards & Crypto Accepted</div>
+    <div class="badge" id="badge4">✅ Certified Official Partner</div>
   </div>
+  
   <div class="disclaimer" id="disclaimer">18+ only. Gambling can be addictive. Please bet responsibly. T&C apply.</div>
 </div>
 
 <script>
-// Auto-detect Brazil Language and Switch Content Dynamically
-function setupLocalization() {
-  const userLang = navigator.language || navigator.userLanguage;
-  const isBrazil = userLang.toLowerCase().includes('pt') || Intl.DateTimeFormat().resolvedOptions().timeZone.includes('Sao_Paulo');
+// One-Tap Promo Copy Feature
+function copyPromoCode() {
+  navigator.clipboard.writeText("24HOUR");
+  const alertTxt = document.getElementById('copy-alert');
+  alertTxt.style.display = 'block';
+  setTimeout(() => { alertTxt.style.display = 'none'; }, 2500);
+}
 
+// Full Multi-Country Localization Router
+function setupLocalization() {
+  const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone.toLowerCase();
+
+  // 1. VENEZUELA / SPANISH
+  if (userLang.includes('es') || timeZone.includes('caracas')) {
+    document.getElementById('wc-badge').innerHTML = "COPA MUNDIAL<br>EN VIVO 🏆";
+    document.getElementById('live-text').textContent = "El Mundial ya está en vivo";
+    document.getElementById('headline').innerHTML = "APUESTA EN VIVO<br><span>DEL MUNDIAL</span>";
+    document.getElementById('hero-sub').innerHTML = "Cuotas al instante para cada partido global.";
+    document.getElementById('bonus-amount').textContent = "$200 USD"; 
+    document.getElementById('bonus-desc').textContent = "Bono de bienvenida del 100% en tu primer depósito 🎁";
+    document.getElementById('promo-label').textContent = "Toca para copiar el código promocional exclusivo";
+    document.getElementById('copy-alert').textContent = "✔ ¡COPIADO AL PORTAPAPELES!";
+    document.getElementById('matches-title').textContent = "🔥 PARTIDOS EN VIVO POPULARES";
+    document.getElementById('m-status1').textContent = "FASE DE GRUPOS";
+    document.getElementById('m-status2').textContent = "FASE DE GRUPOS";
+    document.getElementById('live-lbl1').textContent = "EN VIVO";
+    document.getElementById('live-lbl2').textContent = "EN VIVO";
+    document.getElementById('steps-title').textContent = "⚡ PASOS RÁPIDOS PARA GANAR";
+    document.getElementById('step1').innerHTML = "Toca abajo para **registrarte gratis** en 1xBet";
+    document.getElementById('step2').innerHTML = "Usa el código exclusivo **24HOUR** al registrarte";
+    document.getElementById('step3').innerHTML = "Haz tu **primer depósito rápido** para duplicar tu dinero";
+    document.getElementById('cta-btn-top').textContent = "⚽ COMIENZA A APOSTAR EN VIVO YA";
+    document.getElementById('cta-btn-bottom').textContent = "⚽ COMIENZA A APOSTAR EN VIVO YA";
+    document.getElementById('badge1').textContent = "⚡ Retiros Instantáneos";
+    document.getElementById('badge2').textContent = "🔒 Seguridad 100% Encriptada";
+    document.getElementById('badge3').textContent = "💳 Métodos Locales y Cripto";
+    document.getElementById('badge4').textContent = "✅ Socio Oficial Certificado";
+    return;
+  }
+
+  // 2. EGYPT, MOROCCO, ALGERIA (North Africa French Router)
+  const isNorthAfrica = userLang.includes('ar') || userLang.includes('fr') || 
+                        timeZone.includes('cairo') || timeZone.includes('casablanca') || timeZone.includes('algiers');
+
+  if (isNorthAfrica) {
+    document.getElementById('wc-badge').innerHTML = "COUPE DU MONDE<br>EN DIRECT 🏆";
+    document.getElementById('live-text').textContent = "L'action du Mondial est en direct";
+    document.getElementById('headline').innerHTML = "PARIEZ EN DIRECT SUR<br><span>LA COUPE DU MONDE</span>";
+    document.getElementById('hero-sub').innerHTML = "Cotes instantanées sur tous les matchs.";
+    document.getElementById('bonus-amount').textContent = "€200 EUR"; 
+    document.getElementById('bonus-desc').textContent = "Bonus de Bienvenue de 100% sur votre premier dépôt 🎁";
+    document.getElementById('promo-label').textContent = "Appuyez pour copier le code promo exclusif";
+    document.getElementById('copy-alert').textContent = "✔ COPIÉ DANS LE PRESSE-PAPIERS !";
+    document.getElementById('matches-title').textContent = "🔥 MATCHS EN DIRECT POPULAIRES";
+    document.getElementById('m-status1').textContent = "PHASE DE GROUPES";
+    document.getElementById('m-status2').textContent = "PHASE DE GROUPES";
+    document.getElementById('live-lbl1').textContent = "EN DIRECT";
+    document.getElementById('live-lbl2').textContent = "EN DIRECT";
+    document.getElementById('steps-title').textContent = "⚡ ÉTAPES DE DÉMARRAGE RAPIDE";
+    document.getElementById('step1').innerHTML = "Appuyez ci-dessous pour **créer un profil gratuit** sur 1xBet";
+    document.getElementById('step2').innerHTML = "Utilisez le code exclusif **24HOUR** lors de l'inscription";
+    document.getElementById('step3').innerHTML = "Faites un **premier dépôt rapide** pour doubler votre capital";
+    document.getElementById('cta-btn-top').textContent = "⚽ PARIER EN DIRECT MAINTENANT";
+    document.getElementById('cta-btn-bottom').textContent = "⚽ PARIER EN DIRECT MAINTENANT";
+    document.getElementById('badge1').textContent = "⚡ Retraits Instantanés";
+    document.getElementById('badge2').textContent = "🔒 Sécurité 100% Cryptée";
+    document.getElementById('badge3').textContent = "💳 Cartes, Crypto & Portefeuilles Locaux";
+    document.getElementById('badge4').textContent = "✅ Partenaire Officiel Certifié";
+    return;
+  }
+
+  // 3. BRAZIL / PORTUGUESE
+  const isBrazil = userLang.includes('pt') || timeZone.includes('sao_paulo');
   if (isBrazil) {
-    document.getElementById('wc-badge').innerHTML = "COPA DO MUNDO<br>2026 🏆";
-    document.getElementById('wc-title').textContent = "COPA DO MUNDO DA FIFA 2026";
-    document.getElementById('headline').innerHTML = "APOSTE ALTO<br><span>GANHE MUITO</span>";
-    document.getElementById('hero-sub').innerHTML = "O maior torneio chegou!<br>Ganhe bônus de R$1200 e aposte em todos os jogos!";
-    document.getElementById('countdown-label').textContent = "⚽ A Copa do Mundo Começa Em";
-    
-    document.getElementById('lbl-days').textContent = "Dias";
-    document.getElementById('lbl-hours').textContent = "Horas";
-    document.getElementById('lbl-mins').textContent = "Minutos";
-    document.getElementById('lbl-secs').textContent = "Segundos";
-    
-    document.getElementById('promo-label').textContent = "Seu Código Promocional Exclusivo";
-    document.getElementById('promo-sub').innerHTML = "Use este código para liberar seu <strong>bônus total</strong>";
-    
+    document.getElementById('wc-badge').innerHTML = "COPA DO MUNDO<br>AO VIVO 🏆";
+    document.getElementById('live-text').textContent = "Ação da Copa está Ao Vivo";
+    document.getElementById('headline').innerHTML = "APOSTE AO VIVO NA<br><span>COPA DO MUNDO</span>";
+    document.getElementById('hero-sub').innerHTML = "Odds instantâneas em cada partida global.";
     document.getElementById('bonus-amount').textContent = "R$ 1.200 BRL";
-    document.getElementById('bonus-desc').textContent = "Bônus de Boas-Vindas no seu primeiro depósito 🎁";
-    
-    document.getElementById('matches-title').textContent = "⚽ PREVISÕES DA COPA DO MUNDO";
-    document.getElementById('tip1').textContent = "USA PARA GANHAR";
-    document.getElementById('tip2').textContent = "AMBOS MARCAM";
-    document.getElementById('tip3').textContent = "ENG PARA GANHAR";
-    
-    document.getElementById('steps-title').textContent = "COMO REIVINDICAR";
-    document.getElementById('step1').innerHTML = "Clique no botão abaixo e <strong>registre-se grátis</strong> na 1xBet";
-    document.getElementById('step2').innerHTML = "Insira o código promocional <strong>24HOUR</strong> no registro";
-    document.getElementById('step3').innerHTML = "Faça seu <strong>primeiro depósito</strong> e ganhe 100% de bônus";
-    document.getElementById('step4').innerHTML = "Aposte em <strong>todos os jogos da Copa</strong> e ganhe muito! ⚽";
-    
-    // Updates both Top and Bottom buttons for Brazil
-    document.getElementById('cta-btn-top').textContent = "⚽ REIVINDICAR BÔNUS DA COPA";
-    document.getElementById('cta-btn-bottom').textContent = "⚽ REIVINDICAR BÔNUS DA COPA";
-    
-    document.getElementById('badge1').textContent = "⚡ Saque Instantâneo";
-    document.getElementById('badge2').textContent = "🔒 100% Seguro";
-    document.getElementById('badge3').textContent = "📱 PIX Disponível";
-    document.getElementById('badge4').textContent = "✅ Plataforma Confiável";
-    
-    document.getElementById('disclaimer').textContent = "Apenas para maiores de 18 anos. Jogar pode ser viciante. Por favor, jogue com responsabilidade. Termos e Condições se aplicam.";
+    document.getElementById('bonus-desc').textContent = "Bônus de Boas-Vindas de 100% no Primeiro Depósito 🎁";
+    document.getElementById('promo-label').textContent = "Toque para copiar o código promocional exclusivo";
+    document.getElementById('copy-alert').textContent = "✔ COPIADO PARA A ÁREA DE TRANSFERÊNCIA!";
+    document.getElementById('matches-title').textContent = "🔥 PARTIDAS AO VIVO POPULARES";
+    document.getElementById('m-status1').textContent = "FASE DE GRUPOS";
+    document.getElementById('m-status2').textContent = "FASE DE GRUPOS";
+    document.getElementById('live-lbl1').textContent = "AO VIVO";
+    document.getElementById('live-lbl2').textContent = "AO VIVO";
+    document.getElementById('steps-title').textContent = "⚡ DIRETRIZES DE INÍCIO RÁPIDO";
+    document.getElementById('step1').innerHTML = "Toque abaixo para **criar um perfil grátis** na 1xBet";
+    document.getElementById('step2').innerHTML = "Use o código exclusivo **24HOUR** ao se cadastrar";
+    document.getElementById('step3').innerHTML = "Faça seu **primeiro depósito rápido** para dobrar seu saldo";
+    document.getElementById('cta-btn-top').textContent = "⚽ APOSTAR AO VIVO NA COPA AGORA";
+    document.getElementById('cta-btn-bottom').textContent = "⚽ APOSTAR AO VIVO NA COPA AGORA";
+    document.getElementById('badge1').textContent = "⚡ Saques Instantâneos";
+    document.getElementById('badge2').textContent = "🔒 Segurança 100% Criptografada";
+    document.getElementById('badge3').textContent = "📱 PIX e Cripto Disponíveis";
+    document.getElementById('badge4').textContent = "✅ Parceiro Oficial Certificado";
   }
 }
 
-function updateCountdown() {
-  const target = new Date('2026-06-11T18:00:00Z');
-  const now = new Date();
-  const diff = target - now;
-  if (diff <= 0) return;
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff % 86400000) / 3600000);
-  const mins = Math.floor((diff % 3600000) / 60000);
-  const secs = Math.floor((diff % 60000) / 1000);
-  document.getElementById('days').textContent = String(days).padStart(2,'0');
-  document.getElementById('hours').textContent = String(hours).padStart(2,'0');
-  document.getElementById('mins').textContent = String(mins).padStart(2,'0');
-  document.getElementById('secs').textContent = String(secs).padStart(2,'0');
-}
-
 setupLocalization();
-updateCountdown();
-setInterval(updateCountdown, 1000);
 </script>
 </body>
 </html>
